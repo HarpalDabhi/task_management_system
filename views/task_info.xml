@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- form view -->
+
+    <record id="task_info_view_form" model="ir.ui.view">
+        <field name="name">task.info.view.form</field>
+        <field name="model">task.info</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="hm_task_name"></field>
+                        <field name="hm_task_manager_id"></field>
+                        <field name="hm_task_assignee_ids"></field>
+                        <field name="hm_task_start_date"></field>
+                        <field name="hm_task_end_date"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- list view -->
+
+    <record id="task_info_view_list" model="ir.ui.view">
+        <field name="name">task.info.view.tree</field>
+        <field name="model">task.info</field>
+        <field name="arch" type="xml">
+            <list string="Task Info">
+                        <field name="hm_task_name" width="20%"></field>
+                        <field name="hm_task_manager_id" width="20%"></field>
+                        <field name="hm_task_assignee_ids" width="20%"></field>
+                        <field name="hm_task_start_date" width="20%"></field>
+                        <field name="hm_task_end_date" width="20%"></field>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="task_info_action" model="ir.actions.act_window">
+        <field name="name">TMS</field>
+        <field name="res_model">task.info</field>
+        <field name="view_mode">list,form</field>
+
+    </record>
+
+    <menuitem
+        id="task_info_menu"
+        name="TMS"
+        action="task_info_action"
+        sequence="1"/>
+
+</odoo>

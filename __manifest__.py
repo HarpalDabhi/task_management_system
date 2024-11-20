@@ -13,7 +13,12 @@ This module contains all about task management system and its features.
         'base',
     ],
     'data': [
+        # TODO: security.
+        "security/ir.model.access.csv",
 
+        # TODO: Views.
+        
+        "views/task_info.xml",
     ],
 
     'installable': True,
