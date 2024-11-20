@@ -12,9 +12,14 @@
                     <group>
                         <field name="hm_task_name"></field>
                         <field name="hm_task_manager_id"></field>
-                        <field name="hm_task_assignee_ids"></field>
+                        <field name="hm_task_assignee_ids" widget="many2many_tags"></field>
                         <field name="hm_task_start_date"></field>
                         <field name="hm_task_end_date"></field>
+                         <field name="hm_sub_task_ids">
+                                <!-- <field name="hm_sub_task_name"></field>
+                                <field name="hm_sub_task_assignee_id"></field>
+                                <field name="hm_sub_task_status"></field> -->
+                </field>
                     </group>
                 </sheet>
             </form>
@@ -28,14 +33,16 @@
         <field name="model">task.info</field>
         <field name="arch" type="xml">
             <list string="Task Info">
-                        <field name="hm_task_name" width="20%"></field>
-                        <field name="hm_task_manager_id" width="20%"></field>
-                        <field name="hm_task_assignee_ids" width="20%"></field>
-                        <field name="hm_task_start_date" width="20%"></field>
-                        <field name="hm_task_end_date" width="20%"></field>
+                <field name="hm_task_name" ></field>
+                <field name="hm_task_manager_id" ></field>
+                <field name="hm_task_assignee_ids"  widget="many2many_tags"></field>
+                <field name="hm_task_start_date" ></field>
+                <field name="hm_task_end_date" ></field>
+               
             </list>
         </field>
     </record>
+
 
 
     <record id="task_info_action" model="ir.actions.act_window">

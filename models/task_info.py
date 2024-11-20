@@ -11,3 +11,9 @@ class TaskInfo(models.Model):
     hm_task_assignee_ids = fields.Many2many(comodel_name="res.partner",required=True,string="Assignee")
     hm_task_start_date = fields.Date("Start Date",default=fields.Date.today())
     hm_task_end_date = fields.Date("End Date")
+    hm_sub_task_ids = fields.One2many('sub.task.info', 'parant_task_id', string='Sub Tasks')
+
+
+    # @api.model
+    def start_task():
+        print("start task")
